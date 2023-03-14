@@ -1,0 +1,29 @@
+.canvas-links a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+.canvas-links a:hover{
+ background-color:  white;
+ color: #003399;
+}
+.logout-btn:hover{
+ color: red !important;
+}
+.canvas-btn{
+ background-color: #003399 !important;
+ border: 0px !important;
+}
+.canvas-btn:hover{
+    background-color: #1148b6 !important;
+}
+.nav-active{
+background-color:  white;
+color: #003399 !important;
+}
+.add-btn:hover{
+ background-color: 	#0aafe5 !important;
+}
+.search-btn:hover{
+ background-color: 	#239573 !important;
+}
