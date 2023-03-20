@@ -34,7 +34,7 @@ const Canvas = () => {
       <BsMenuButtonWideFill/>
     </Button>
 
-    <Offcanvas show={show} onHide={handleClose} className="bg-secondary text-white">
+    <Offcanvas show={show} onHide={handleClose} className="canvas-body text-white">
       <Offcanvas.Header closeButton>
         <Offcanvas.Title></Offcanvas.Title>
       </Offcanvas.Header>

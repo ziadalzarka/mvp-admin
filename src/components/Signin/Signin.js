@@ -107,7 +107,7 @@ const emailSubmitHandler = async event =>{
     );
     const responseData = await response;
    console.log(responseData.data) ;
-   localStorage.setItem("UserData" , JSON.stringify(responseData.data.user.username));
+  //  localStorage.setItem("UserData" , JSON.stringify(responseData.data.user.username));
    SetCookie("Token" , responseData.data.token);
    setIsLoading(false);
    window.location.href = '/' ;
@@ -117,9 +117,7 @@ const emailSubmitHandler = async event =>{
     setIsLoading(false);
     setError(err.response.data.error || "SomeThing Went Wrong , Please Try Again .");
   }
-
 };
-
 
 const errorHandler =() =>{
    setError(null) ;

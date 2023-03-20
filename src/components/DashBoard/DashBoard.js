@@ -6,6 +6,9 @@ import Rooms from './Rooms';
 import Waitlist from './Waitlist';
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import './Dashboard.css'
+import { Row } from 'react-bootstrap';
+import AddRoom from './AddRoom';
+import SelectedRoom from './SelectedRoom';
 
 const DashBoard = () => {
 
@@ -19,15 +22,19 @@ const DashBoard = () => {
    window.location.href = '/' ;
   }
   return (
-    <div className='row text-white p-3 w-100'>    
+    <div className='row text-white p-3 m-0 w-100'>    
+    <Row className='justify-content-center'>
+      <div className='col-2'>
+        <Canvas />
+      </div>
+      <div className='row col-lg-12 col-10 justify-content-center'>
+       <h1 className='col-md-6 col-10 dashboard-title rounded p-2'>Admin Portal</h1> 
+      </div>
+    </Row>
 
-     <div className='col-1'>
-      <Canvas />
-     </div>
-     <h1 className='col-11'>Admin Portal</h1> 
+     <div className="d-lg-flex d-none col-3 p-3" style={{ height: "750px" }}>
 
-     <div className="d-lg-flex d-none col-xl-2 col-3 p-3" style={{ height: "750px" }}>
-      <div className=" bg-secondary rounded p-4 justify-content-center">     
+      <div className=" bg-secondary rounded justify-content-center col-xl-9">     
         <div className="canvas-links row justify-content-center p-5">
           <a className={splitLocation[1] === "" ?'nav-active p-4 my-3 rounded fs-5' : 'p-4 my-3 rounded fs-5'} href={"/"}>
             Waitlist 
@@ -44,10 +51,12 @@ const DashBoard = () => {
         </div>
       </div>
     </div>
-    <div className="col-lg-9 col-12 text-center p-2">
+    <div className="col-lg-9 col-12 text-center p-0 m-0 ">
       <Routes>
         <Route exact path="/" element={<Waitlist/>} />
         <Route path="/rooms" element={<Rooms/>} />
+        <Route path="/selected-rooms/:id" element={<SelectedRoom/>} />
+        <Route path="/add-room" element={<AddRoom/>} />
         <Route path="/prizes" element={<Prizes/>} />
       </Routes>
     </div>
