@@ -188,7 +188,10 @@ const oneSlice =  rooms.results.slice(0,paginationElements) ;
             <span className='fw-bold'>Players : </span> 
             <span className=''>{data.players.length}</span>
           </div>
-         <span className='col-sm-7 col-12 date '>
+         <span className={ data.startDate.slice(-10 ,-6)<=currYear && data.startDate.slice(-10 ,-6)>=currYear&&
+         data.startDate.slice(-5 ,-3)<=currMonth && currMonth<=data.endDate.slice(-5 ,-3)&&
+         data.startDate.slice(-2)<=currDay && currDay<=data.endDate.slice(-2)? 
+         'col-sm-7 col-12 date ':'col-sm-7 col-12 date text-secondary'}>
             <span className='mx-2'> {data.startDate}</span> 
              <TbArrowBigRightLineFilled className='fs-1 '/> 
             <span className='mx-2'>{data.endDate}</span>
